@@ -8,9 +8,10 @@ class ListNode:
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
         visited = set()
-        while head:
-            if head in visited:
-                return head
-            visited.add(head)
-            head = head.next
+        node = head
+        while node:
+            if node in visited:
+                return node
+            visited.add(node)
+            node = node.next
         return None
